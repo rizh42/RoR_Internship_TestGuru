@@ -7,3 +7,5 @@ Ruby version used: 2.7.2
 - Questions
 - Answers
 - Results
+- Tests
+- Test Categories
