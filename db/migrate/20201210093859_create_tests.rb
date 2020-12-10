@@ -5,6 +5,7 @@ class CreateTests < ActiveRecord::Migration[5.2]
       t.integer :level, null: false, default: 0
       t.integer :category_id, null: false
       t.integer :user_id, null: false
+      t.references :category, null: false, primary_key: true
 
       t.timestamps
     end
