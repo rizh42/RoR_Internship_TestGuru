@@ -12,29 +12,29 @@ cat = Categories.create!([
                          ])
 
 tests = Test.create!([
-                       { title: 'First', level: 1, category: cat[0].id, user: users[0].id },
-                       { title: 'Second', level: 2, category: cat[1].id, user: users[1].id },
-                       { title: 'Third', level: 1, category: cat[2].id, user: users[2].id },
-                       { title: 'Fourth', level: 0, category: cat[3].id, user: users[0].id }
+                       { title: 'First', level: 1, category: cat[0], author: users[0] },
+                       { title: 'Second', level: 2, category: cat[1], author: users[1] },
+                       { title: 'Third', level: 1, category: cat[2], author: users[2] },
+                       { title: 'Fourth', level: 0, category: cat[3], author: users[0] }
                      ])
 
 quest = Questions.create!([
-                            { title: 'First', test_id: tests[0].id },
-                            { title: 'Second', test_id: tests[1].id },
-                            { title: 'Third', test_id: tests[2].id },
-                            { title: 'Fourth', test_id: tests[3].id }
+                            { title: 'First', test: tests[0] },
+                            { title: 'Second', test: tests[1] },
+                            { title: 'Third', test: tests[2] },
+                            { title: 'Fourth', test: tests[3] }
                           ])
 
 Answers.create!([
-                  { title: '+', questions_id: quest[0].id },
-                  { title: '-', correct: true, questions_id: quest[1].id },
-                  { title: '+', questions_id: quest[2].id },
-                  { title: '-', correct: true, questions_id: quest[3].id }
+                  { title: '+', question: quest[0] },
+                  { title: '-', correct: true, question: quest[1] },
+                  { title: '+', question: quest[2] },
+                  { title: '-', correct: true, question: quest[3] }
                 ])
 
 UserTests.create!([
-                    { user_id: users[0].id, test_id: tests[0].id },
-                    { user_id: users[1].id, test_id: tests[1].id },
-                    { user_id: users[2].id, test_id: tests[2].id },
-                    { user_id: users[0].id, test_id: tests[3].id }
+                    { user: users[0], test: tests[0] },
+                    { user: users[1], test: tests[1] },
+                    { user: users[2], test: tests[2] },
+                    { user: users[0], test: tests[3] }
                   ])
