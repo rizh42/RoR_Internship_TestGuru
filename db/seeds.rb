@@ -12,10 +12,22 @@ cat = Categories.create!([
                          ])
 
 tests = Test.create!([
-                       { title: 'First', level: 1, category: cat[0], author: users[0] },
-                       { title: 'Second', level: 2, category: cat[1], author: users[1] },
-                       { title: 'Third', level: 1, category: cat[2], author: users[2] },
-                       { title: 'Fourth', level: 0, category: cat[3], author: users[0] }
+                       { title: 'First',
+                         level: 1,
+                         category: cat[0],
+                         author: users[0] },
+                       { title: 'Second',
+                         level: 2,
+                         category: cat[1],
+                         author: users[1] },
+                       { title: 'Third',
+                         level: 1,
+                         category: cat[2],
+                         author: users[2] },
+                       { title: 'Fourth',
+                         level: 0,
+                         category: cat[3],
+                         author: users[0] }
                      ])
 
 quest = Questions.create!([

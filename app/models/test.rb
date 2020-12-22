@@ -4,7 +4,7 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
   has_many :user_tests, dependent: :destroy
-  has_many :passing_users, through: :user_tests
+  has_many :passing_users, through: :user_tests, source: :user
 
   def self.names_by_category(category)
     Test.joins(:category).where(
