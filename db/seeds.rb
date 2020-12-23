@@ -1,7 +1,7 @@
 users = Users.create!([
-                        { name: 'user1' },
-                        { name: 'user2' },
-                        { name: 'user3' }
+                        { name: 'user1', email: 'ex1@ex.ru' },
+                        { name: 'user2', email: 'ex2@ex.ru' },
+                        { name: 'user3', email: 'ex3@ex.ru' }
                       ])
 
 cat = Categories.create!([
