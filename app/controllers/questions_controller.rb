@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    render inline: '<%= @question %>'
+    render inline: '<%= @question.title %>'
   end
 
   def new; end

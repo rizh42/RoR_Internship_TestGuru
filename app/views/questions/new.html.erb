@@ -1,2 +1,12 @@
-<%= render 'questions/form', { test: @test, question: @question } %><br>
-<%= render 'questions/back_to_questions', test: @test %>
+<h1>Create New Question</h1>
+
+<form action="/tests/<%= params[:test_id] %>/questions" method="POST">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <p>
+    <label for='question-title'>Question:</label>
+    <input type='text' name='question[title]' id = "question-title">
+  </p>
+  
+  <input type="submit">
+</form>
