@@ -15,11 +15,10 @@ class QuestionsController < ApplicationController
   def new; end
 
   def create
-    @question = Question.new(question_params)
+    @question = @test.questions.create(question_parameters)
 
-    if question.valid?
-      question.save
-      redirect_to test_questions_path
+    if @question.save
+      redirect_to @question
     else
       render :new
     end
