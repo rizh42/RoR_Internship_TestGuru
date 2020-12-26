@@ -10,7 +10,7 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  validates :title, presence: true, uniqueness: { scope :level }
+  validates :title, presence: true, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
   def self.names_by_category(category)

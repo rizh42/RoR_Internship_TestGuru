@@ -1,10 +1,10 @@
-users = Users.create!([
+users = User.create!([
                         { name: 'user1', email: 'ex1@ex.ru' },
                         { name: 'user2', email: 'ex2@ex.ru' },
                         { name: 'user3', email: 'ex3@ex.ru' }
                       ])
 
-cat = Categories.create!([
+cat = Category.create!([
                            { title: 'Ruby' },
                            { title: 'ML' },
                            { title: 'HTML' },
@@ -25,7 +25,7 @@ tests = Test.create!([
                          category: cat[2],
                          author: users[2] },
                        { title: 'Fourth',
-                         level: 0,
+                         level: 3,
                          category: cat[3],
                          author: users[0] }
                      ])
@@ -40,8 +40,8 @@ quest = Questions.create!([
 Answers.create!([
                   { title: '+', question: quest[0] },
                   { title: '-', correct: true, question: quest[1] },
-                  { title: '+', question: quest[2] },
-                  { title: '-', correct: true, question: quest[3] }
+                  { title: '++', question: quest[2] },
+                  { title: '--', correct: true, question: quest[3] }
                 ])
 
 UserTests.create!([
