@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index]
+  before_action :find_test
   before_action :find_question, only: %i[destroy show]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -12,13 +12,15 @@ class QuestionsController < ApplicationController
     render inline: '<%= @question.title %>'
   end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def create
-    @question = @test.questions.create(question_parameters)
+    @question = @test.questions.new(question_parameters)
 
     if @question.save
-      redirect_to @question
+      redirect_to test_questions_path
     else
       render :new
     end
