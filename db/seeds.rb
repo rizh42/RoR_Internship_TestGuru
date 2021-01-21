@@ -25,26 +25,26 @@ tests = Test.create!([
                          category: cat[2],
                          author: users[2] },
                        { title: 'Fourth',
-                         level: 3,
+                         level: 0,
                          category: cat[3],
                          author: users[0] }
                      ])
 
-quest = Questions.create!([
+quest = Question.create!([
                             { title: 'First', test: tests[0] },
                             { title: 'Second', test: tests[1] },
                             { title: 'Third', test: tests[2] },
                             { title: 'Fourth', test: tests[3] }
                           ])
 
-Answers.create!([
+Answer.create!([
                   { title: '+', question: quest[0] },
                   { title: '-', correct: true, question: quest[1] },
                   { title: '++', question: quest[2] },
                   { title: '--', correct: true, question: quest[3] }
                 ])
 
-UserTests.create!([
+UserTest.create!([
                     { user: users[0], test: tests[0] },
                     { user: users[1], test: tests[1] },
                     { user: users[2], test: tests[2] },
