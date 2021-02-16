@@ -7,10 +7,7 @@ class TestsController < ApplicationController
     @test = Test.all
   end
 
-  def show
-    find_test
-    find_questions
-  end
+  def show; end
 
   def new
     @test = Test.new
