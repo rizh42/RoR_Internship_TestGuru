@@ -38,7 +38,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_parameters
-    params.require(:question).permit(:title)
+    params.require(:question).permit(:title, :test)
   end
 
   def find_test
